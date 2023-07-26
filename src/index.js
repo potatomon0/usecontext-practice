@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppContextProvider from './contexts/context'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* everything in AppContextProvider is now a children of it */}
+    <AppContextProvider>
+      {/* <App /> is the {props.children} in context.js */}
+      <App />
+    </AppContextProvider>
   </React.StrictMode>
 );
 
